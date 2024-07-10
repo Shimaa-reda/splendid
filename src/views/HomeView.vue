@@ -5,7 +5,9 @@
     <AppHeader/>
     <passion/>
     <about/>
-    <join-section/>
+    <ClientSlider/>
+    
+    <app-footer/>
   </div>
 </template>
 
@@ -13,7 +15,9 @@
 import About from '@/components/About.vue'
 import AppHeader from '../components/AppHeader.vue'
 import Passion from '../components/Passion.vue'
-import JoinSection from '@/components/JoinSection.vue'
+
+import AppFooter from '@/components/AppFooter.vue'
+import ClientSlider from '@/components/ClientSlider.vue'
 // @ is an alias to /src
 
 
@@ -23,8 +27,12 @@ export default {
     AppHeader,
     Passion,
     About,
-    JoinSection
+  
+    AppFooter,
+    ClientSlider
     
   }
 }
 </script>
+,
+    ClientSlider
