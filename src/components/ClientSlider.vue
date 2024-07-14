@@ -21,25 +21,40 @@
       </div>
 
       <div class="container d-flex flex-row justify-content-center align-items-center">
-      <div class="section d-flex flex-column justify-content-center align-items-center">
-        <p>
-          Join us in our mission to innovate and create outstanding marketing
-          and advertising solutions.
-        </p>
-        <button class="join-btn">Join Us</button>
+        <div class="section d-flex flex-column justify-content-center align-items-center">
+          <p>
+            Join us in our mission to innovate and create outstanding marketing
+            and advertising solutions.
+          </p>
+          <!-- <button class="join-btn" @click="showModal = true">Join Us</button> -->
+          <!-- <button class="join-btn" @click="showModal = true">Join Us</button> -->
+           <button class="join-btn" @click="showModal = true">Join Us</button>
+
+        </div>
       </div>
     </div>
-    </div>
 
+    <!-- Modal -->
+    <!-- <JoinModal v-if="showModal" @close="showModal = false" /> -->
+     <JoinModal :visible="showModal" @close="showModal = false" />
+   
+
+   
     
+
   </div>
 </template>
 
 <script>
+import JoinModal from './JoinModal.vue';
 export default {
   name: "AppSlider",
+  components:{
+    JoinModal
+  },
   data() {
     return {
+       showModal: false,
       firstRowImages: [
         "image1.png", "image2.png", "image3.png", "image4.png", "image5.png",
         "image6.png", "image7.png", "image8.png", "image9.png", "image10.png",
@@ -52,6 +67,7 @@ export default {
         "image11.png", "image12.png", "image13.png", "image14.png", "image15.png",
         "image16.png", "image17.png",
       ],
+      
     };
   },
 };

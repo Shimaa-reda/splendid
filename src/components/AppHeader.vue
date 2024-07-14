@@ -31,17 +31,29 @@
               <router-link to="/about" class="nav-link">Join Us</router-link>
             </li>
           </ul>
-          <button class="contact-btn">Contact Us</button>
+          <!-- <button class="contact-btn">Contact Us</button> -->
+          <button class="contact-btn" @click="showModal = true">Contact Us</button>
         </div>
       </div>
     </nav>
+     <ContactModal :visible="showModal" @close="showModal = false" />
     <!-- <header class="hero-header"></header> -->
   </div>
 </template>
 
 <script>
+import ContactModal from './ContactModal.vue';
 export default {
+
   name: "AppHeader",
+   components:{
+    ContactModal
+  },
+  data() {
+    return {
+       showModal: false,
+    }
+  },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
@@ -49,6 +61,7 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+
     handleScroll() {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
