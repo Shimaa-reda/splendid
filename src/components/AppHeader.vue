@@ -42,6 +42,8 @@
 </template>
 
 <script>
+
+
 import ContactModal from './ContactModal.vue';
 export default {
 
