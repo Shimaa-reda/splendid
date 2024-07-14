@@ -19,16 +19,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <router-link to="/" class="nav-link active" aria-current="page">About Us</router-link>
+              <!-- <router-link to="/" class="nav-link active" aria-current="page">About Us</router-link> -->
+               <a href="#" class="nav-link active" @click.prevent="scrollToSection('about')">About Us</a>
+         
+       
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">Services</router-link>
+              <!-- <router-link to="/" class="nav-link">Services</router-link> -->
+               <a href="#" class="nav-link active" @click.prevent="scrollToSection('services')">Services</a>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">Clients</router-link>
+              <!-- <router-link to="/" class="nav-link">Clients</router-link> -->
+               <a href="#" class="nav-link active" @click.prevent="scrollToSection('clients')">Clients</a>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">Join Us</router-link>
+              <!-- <router-link to="/" class="nav-link">Join Us</router-link> -->
+               <a href="#" class="nav-link active" @click.prevent="scrollToSection('joinUs')">Join Us</a>
             </li>
           </ul>
           <!-- <button class="contact-btn">Contact Us</button> -->
@@ -71,7 +77,28 @@ export default {
       } else {
         navbar.classList.remove('fixed-navbar');
       }
-    }
+    },
+    // scrollToSection(sectionId) {
+    //   const section = document.getElementById(sectionId);
+    //   if (section) {
+    //     section.scrollIntoView({ behavior: 'smooth' });
+    //   }
+    // }
+    scrollToSection(sectionId) {
+    this.$nextTick(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const sectionPosition = section.offsetTop;
+        const offsetPosition = sectionPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
   }
 };
 </script>

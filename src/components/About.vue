@@ -1,5 +1,5 @@
 <template>
-  <div class="container ">
+  <div class="container " id="about">
     <div class="row mt-5 d-flex flex-row justify-content-center align-items-center ">
         <div class="col-sm-12 col-md-6 col-lg-6">
             <img src="../assets/about1.png" alt="" class="w-100">

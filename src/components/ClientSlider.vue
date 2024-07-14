@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="slider">
+    <div class="slider" id="clients">
       <h3>Trusted by leading companies worldwide</h3>
 
       <div class="row row1">
@@ -21,13 +21,12 @@
       </div>
 
       <div class="container d-flex flex-row justify-content-center align-items-center">
-        <div class="section d-flex flex-column justify-content-center align-items-center">
+        <div class="section d-flex flex-column justify-content-center align-items-center " id="joinUs">
           <p>
             Join us in our mission to innovate and create outstanding marketing
             and advertising solutions.
           </p>
-          <!-- <button class="join-btn" @click="showModal = true">Join Us</button> -->
-          <!-- <button class="join-btn" @click="showModal = true">Join Us</button> -->
+          
            <button class="join-btn" @click="showModal = true">Join Us</button>
 
         </div>
