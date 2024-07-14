@@ -41,7 +41,7 @@
         <div class="row d-flex align-items-center">
           <div class="col-12 text-center">
             <div class="p-3">
-              <div>&copy; <span>2024 SPLENDID ADS. , All Rights Reserved</span></div>
+              <div>&copy; <span>2024 SPLENDID ADS, All Rights Reserved</span></div>
             </div>
           </div>
           <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
