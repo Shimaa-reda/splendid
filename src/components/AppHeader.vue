@@ -30,7 +30,8 @@
             </li>
             <li class="nav-item">
               <!-- <router-link to="/" class="nav-link">Clients</router-link> -->
-               <a href="#" class="nav-link active" @click.prevent="scrollToSection('clients')">Clients</a>
+                <a href="#" class="nav-link active" @click.prevent="scrollToSection('clients')">Clients</a>
+
             </li>
             <li class="nav-item">
               <!-- <router-link to="/" class="nav-link">Join Us</router-link> -->
@@ -79,21 +80,23 @@ export default {
       }
     },
    
-    scrollToSection(sectionId) {
-    this.$nextTick(() => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const sectionPosition = section.offsetTop;
-        const offsetPosition = sectionPosition - navbarHeight;
+   scrollToSection(sectionId) {
+  console.log('Scrolling to section:', sectionId);
+  this.$nextTick(() => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      const sectionPosition = section.offsetTop;
+      const offsetPosition = sectionPosition - navbarHeight;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
+
   }
 };
 </script>

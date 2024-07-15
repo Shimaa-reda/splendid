@@ -11,11 +11,16 @@
           <div class="links">
             <h4>Important Links</h4>
             <ul class="list-unstyled lh-lg">
-              <li>About Us</li>
+              <!-- <li>About Us</li>
               <li>Services</li>
               <li>Clients</li>
               <li>Join Us</li>
-              <li>Contact Us</li>
+              <li>Contact Us</li> -->
+               <li><a href="#" class="nav-link active" @click.prevent="scrollToSection('about')">About Us</a></li>
+              <li> <a href="#" class="nav-link active" @click.prevent="scrollToSection('service')">Service</a></li>
+              <li><a href="#" class="nav-link active" @click.prevent="scrollToSection('clients')">Clients</a></li>
+              <li><a href="#" class="nav-link active" @click.prevent="scrollToSection('joinUs')">Join Us</a></li>
+              <li><a class="nav-link activ contact-btn" @click="showModal = true">Contact Us</a></li>
               
             </ul>
           </div>
@@ -52,12 +57,53 @@
         </div>
       </section>
     </div>
+
+   
   </div>
+   <ContactModal :visible="showModal" @close="showModal = false" />
 </template>
 
 <script>
+import ContactModal from './ContactModal.vue';
 export default {
   name: "AppFooter",
+  components:{
+    ContactModal
+  },
+   data() {
+    return {
+       showModal: false,
+    }
+  },
+   methods: {
+
+    handleScroll() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('fixed-navbar');
+      } else {
+        navbar.classList.remove('fixed-navbar');
+      }
+    },
+   
+   scrollToSection(sectionId) {
+  console.log('Scrolling to section:', sectionId);
+  this.$nextTick(() => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      const sectionPosition = section.offsetTop;
+      const offsetPosition = sectionPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
+
+  }
 };
 </script>
 
@@ -77,7 +123,8 @@ h4{
     color: #FF9366;
 
 }
-li:hover{
+
+li:hover a{
     color: #FF9366;
     cursor: pointer;
 }

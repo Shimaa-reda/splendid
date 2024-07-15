@@ -1,52 +1,48 @@
 <template>
-  <div class="container">
-  
-      <div class="slider" id="clients">
-        <h3>Trusted by leading companies worldwide</h3>
-      <div class="slide-track">
-              <img
-                v-for="(image, index) in firstRowImages"
-                :key="'row1-' + index"
-                :src="require(`@/assets/${image}`)"
-                :alt="'Image ' + (index + 1)"
-              />
-            </div>
-
-            <div class="slide-track">
-              <img
-                v-for="(image, index) in secondRowImages"
-                :key="'row2-' + index"
-                :src="require(`@/assets/${image}`)"
-                :alt="'Image ' + (index + 19)"
-              />
-            </div>
-      </div>
-
+  <div class="container" id="clients">
     
+    <div class="slider"  >
+      <h3>Trusted by leading companies worldwide</h3>
+      <div class="slide-track">
+        <div class="slide" v-for="(image, index) in images" :key="index">
+          <img :src="require(`../assets/${image}`)" height="100" width="200" alt="" />
+        </div>
+        <!-- Repeat the images to ensure infinite scrolling -->
+        <div class="slide" v-for="(image, index) in images" :key="'repeat-' + index">
+          <img :src="require(`../assets/${image}`)" height="100" width="200" alt="" />
+        </div>
+      </div>
+    </div>
 
+   
+    <div class="slider">
       
+      <div class="slide-track">
+        <div class="slide" v-for="(image, index) in moreImages" :key="index">
+          <img :src="require(`../assets/${image}`)" height="100" width="200" alt="" />
+        </div>
+        <!-- Repeat the images to ensure infinite scrolling -->
+        <div class="slide" v-for="(image, index) in moreImages" :key="'repeat-more-' + index">
+          <img :src="require(`../assets/${image}`)" height="100" width="200" alt="" />
+        </div>
+      </div>
+    </div>
   </div>
 
-      
  
-
-    <!-- Modal -->
-  
-    <JoinModal :visible="showModal" @close="showModal = false" />
-  
 </template>
 
 <script>
-import JoinModal from "./JoinModal.vue";
+
 export default {
   name: "AppSlider",
   components: {
-    JoinModal,
+   
   },
   data() {
     return {
       showModal: false,
-      firstRowImages: [
+      images: [
         "image1.png",
         "image2.png",
         "image3.png",
@@ -65,7 +61,7 @@ export default {
         "image16.png",
         "image17.png",
       ],
-      secondRowImages: [
+      moreImages: [
         "image1.png",
         "image2.png",
         "image3.png",
@@ -92,26 +88,11 @@ export default {
 <style scoped>
 body {
   align-items: center;
-  background: #fff;
+  background: #e3e3e3;
   display: flex;
   height: 100vh;
   justify-content: center;
-}
-
-
-.slider .slide-track {
-  animation: scroll 50s linear infinite;
-  display: flex;
-  width: calc(100% * 2);
-}
-
-.slider .slide-track:hover {
-  animation-play-state: paused;
-}
-
-.slider .slide {
-  height: 250px;
-  width: 250px;
+  flex-direction: column;
 }
 
 @keyframes scroll {
@@ -119,57 +100,49 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 9));
+    transform: translateX(calc(-250px * 17)); /* Adjusted to match the number of slides */
   }
 }
 
 .slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 150px; /* Adjust height as needed */
+  margin: 20px auto; /* Added margin for spacing between sliders */
   overflow: hidden;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  position: relative;
+  width: 960px;
 }
 
-
-.slider .slide {
-  height: 200px;
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 150px; /* Adjust height to match slider */
+  position: absolute;
   width: 200px;
-}
-.slide-track img {
-  width: calc((100% / 17) - 8px);
-  height: auto;
-  margin: 0 24px; /* Increased margin for more space */
+  z-index: 2;
 }
 
-
-h3 {
-  color: #002347;
-  font-weight: bold;
-  margin-top: 45px;
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
 }
 
-
-.section {
-  background: linear-gradient(to left, #537895, #002347);
-  border-radius: 20px;
-  height: 150px;
-  width: 900px;
-  margin-bottom: 0; 
+.slider::before {
+  left: 0;
+  top: 0;
 }
 
-p {
-  color: #ffffff;
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 34); /* Adjust width to account for repeated images */
 }
 
-.join-btn {
-  background-color: white;
-  color: #f16a23;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: bold;
+.slide {
+  height: 150px; /* Adjust height to match slider */
+  width: 200px; /* Adjust width to match images */
 }
 </style>
