@@ -78,12 +78,7 @@ export default {
         navbar.classList.remove('fixed-navbar');
       }
     },
-    // scrollToSection(sectionId) {
-    //   const section = document.getElementById(sectionId);
-    //   if (section) {
-    //     section.scrollIntoView({ behavior: 'smooth' });
-    //   }
-    // }
+   
     scrollToSection(sectionId) {
     this.$nextTick(() => {
       const section = document.getElementById(sectionId);

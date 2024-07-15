@@ -1,47 +1,39 @@
 <template>
   <div class="container">
-    <div class="slider" id="clients">
-      <h3>Trusted by leading companies worldwide</h3>
-
+  
+      <div class="slider" id="clients">
+        <h3>Trusted by leading companies worldwide</h3>
       <div class="slide-track">
-        <img
-          v-for="(image, index) in firstRowImages"
-          :key="'row1-' + index"
-          :src="require(`@/assets/${image}`)"
-          :alt="'Image ' + (index + 1)"
-        />
+              <img
+                v-for="(image, index) in firstRowImages"
+                :key="'row1-' + index"
+                :src="require(`@/assets/${image}`)"
+                :alt="'Image ' + (index + 1)"
+              />
+            </div>
+
+            <div class="slide-track">
+              <img
+                v-for="(image, index) in secondRowImages"
+                :key="'row2-' + index"
+                :src="require(`@/assets/${image}`)"
+                :alt="'Image ' + (index + 19)"
+              />
+            </div>
       </div>
 
-      <div class="slide-track">
-        <img
-          v-for="(image, index) in secondRowImages"
-          :key="'row2-' + index"
-          :src="require(`@/assets/${image}`)"
-          :alt="'Image ' + (index + 19)"
-        />
-      </div>
+    
 
-      <div
-        class="container d-flex flex-row justify-content-center align-items-center"
-      >
-        <div
-          class="section d-flex flex-column justify-content-center align-items-center"
-          id="joinUs"
-        >
-          <p>
-            Join us in our mission to innovate and create outstanding marketing
-            and advertising solutions.
-          </p>
+      
+  </div>
 
-          <button class="join-btn" @click="showModal = true">Join Us</button>
-        </div>
-      </div>
-    </div>
+      
+ 
 
     <!-- Modal -->
-    <!-- <JoinModal v-if="showModal" @close="showModal = false" /> -->
+  
     <JoinModal :visible="showModal" @close="showModal = false" />
-  </div>
+  
 </template>
 
 <script>
@@ -106,14 +98,6 @@ body {
   justify-content: center;
 }
 
-.slider {
-  background: white;
-  height: 250px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  width: 1140px;
-}
 
 .slider .slide-track {
   animation: scroll 50s linear infinite;
@@ -138,11 +122,6 @@ body {
     transform: translateX(calc(-250px * 9));
   }
 }
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
 .slider {
   display: flex;
@@ -150,16 +129,11 @@ body {
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: auto;
   margin-bottom: 20px;
 }
 
-.row {
-  display: flex;
-  width: calc(100% * 1.2);
-  height: 25vh;
-  align-items: center;
-}
+
 .slider .slide {
   height: 200px;
   width: 200px;
@@ -170,13 +144,6 @@ body {
   margin: 0 24px; /* Increased margin for more space */
 }
 
-.row1 {
-  animation: scrollRight 6s linear infinite;
-}
-
-.row2 {
-  animation: scrollLeft 6s linear infinite;
-}
 
 h3 {
   color: #002347;
@@ -184,30 +151,13 @@ h3 {
   margin-top: 45px;
 }
 
-@keyframes scrollRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  } /* Adjust to make a smooth loop */
-}
-
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(50%);
-  } /* Adjust to make a smooth loop */
-}
 
 .section {
   background: linear-gradient(to left, #537895, #002347);
   border-radius: 20px;
   height: 150px;
   width: 900px;
-  margin-bottom: 0; /* Adjust as needed */
+  margin-bottom: 0; 
 }
 
 p {
