@@ -5,6 +5,8 @@
     <AppHeader/>
     <passion/>
     <about/>
+    <!-- <VerticalTabComponent /> -->
+    <vertical-tab-component/>
     <ClientSlider/>
     <join-section/>
     
@@ -20,6 +22,8 @@ import Passion from '../components/Passion.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import ClientSlider from '@/components/ClientSlider.vue'
 import JoinSection from '@/components/joinSection.vue'
+import VerticalTabComponent from '@/components/VerticalTabComponent.vue'
+// import VerticalTabComponent from '@/components/joinSection.vue'
 // @ is an alias to /src
 
 
@@ -32,7 +36,9 @@ export default {
   
     AppFooter,
     ClientSlider,
-    JoinSection
+    JoinSection,
+    VerticalTabComponent,
+    // VerticalTabComponent
     
     
   }
