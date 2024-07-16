@@ -1,67 +1,54 @@
 <template>
   <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+    <nav :class="['navbar', 'navbar-expand-lg', 'navbar-light', 'custom-navbar', { 'fixed-navbar': isFixed }]" ref="navbar">
       <div class="container-fluid">
         <a class="navbar-brand ms-3 text-uppercase ps-5" href="#">
-          <img src="../assets/splendid-logo.png" alt="">
+          <img src="../assets/splendid-logo.png" alt="Logo">
         </a>
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          @click="toggleNavbar"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" :class="{ 'show': isNavbarOpen }" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <!-- <router-link to="/" class="nav-link active" aria-current="page">About Us</router-link> -->
-               <a href="#" class="nav-link active" @click.prevent="scrollToSection('about')">About Us</a>
-         
-       
+              <a href="#" class="nav-link active" @click.prevent="scrollToSection('about')">About Us</a>
             </li>
             <li class="nav-item">
-              <!-- <router-link to="/" class="nav-link">Services</router-link> -->
-               <a href="#" class="nav-link active" @click.prevent="scrollToSection('services')">Services</a>
+              <a href="#" class="nav-link" @click.prevent="scrollToSection('services')">Services</a>
             </li>
             <li class="nav-item">
-              <!-- <router-link to="/" class="nav-link">Clients</router-link> -->
-                <a href="#" class="nav-link active" @click.prevent="scrollToSection('clients')">Clients</a>
-
+              <a href="#" class="nav-link" @click.prevent="scrollToSection('clients')">Clients</a>
             </li>
             <li class="nav-item">
-              <!-- <router-link to="/" class="nav-link">Join Us</router-link> -->
-               <a href="#" class="nav-link active" @click.prevent="scrollToSection('joinUs')">Join Us</a>
+              <a href="#" class="nav-link" @click.prevent="scrollToSection('joinUs')">Join Us</a>
             </li>
           </ul>
-          <!-- <button class="contact-btn">Contact Us</button> -->
           <button class="contact-btn" @click="showModal = true">Contact Us</button>
         </div>
       </div>
     </nav>
-     <ContactModal :visible="showModal" @close="showModal = false" />
-    <!-- <header class="hero-header"></header> -->
+    <ContactModal :visible="showModal" @close="showModal = false" />
   </div>
 </template>
 
 <script>
-
-
 import ContactModal from './ContactModal.vue';
-export default {
 
+export default {
   name: "AppHeader",
-   components:{
+  components: {
     ContactModal
   },
   data() {
     return {
-       showModal: false,
-    }
+      showModal: false,
+      isNavbarOpen: false,
+      isFixed: false
+    };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -70,33 +57,28 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-
-    handleScroll() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('fixed-navbar');
-      } else {
-        navbar.classList.remove('fixed-navbar');
-      }
+    toggleNavbar() {
+      this.isNavbarOpen = !this.isNavbarOpen;
     },
-   
-   scrollToSection(sectionId) {
-  console.log('Scrolling to section:', sectionId);
-  this.$nextTick(() => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const navbarHeight = document.querySelector('.navbar').offsetHeight;
-      const sectionPosition = section.offsetTop;
-      const offsetPosition = sectionPosition - navbarHeight;
+    scrollToSection(sectionId) {
+      console.log('Scrolling to section:', sectionId);
+      this.$nextTick(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const navbarHeight = this.$refs.navbar.offsetHeight;
+          const sectionPosition = section.offsetTop;
+          const offsetPosition = sectionPosition - navbarHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
       });
+    },
+    handleScroll() {
+      this.isFixed = window.scrollY > 50;
     }
-  });
-}
-
   }
 };
 </script>
@@ -116,7 +98,6 @@ export default {
   margin: 0 10px; /* Add space between each navigation item */
 }
 
-/* Custom CSS to increase navbar height */
 .custom-navbar {
   min-height: 40px; /* Adjust this value to increase height */
   padding: 1rem 1rem; /* Adjust padding for more spacing inside the navbar */
@@ -124,7 +105,7 @@ export default {
   background-color: white; /* Initial background color */
 }
 
-.custom-navbar.fixed-navbar {
+.fixed-navbar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -142,7 +123,7 @@ export default {
 }
 
 .custom-navbar .nav-link.active {
-  color: #002347; 
+  color: #002347;
 }
 
 .contact-btn {
@@ -159,23 +140,7 @@ export default {
   line-height: 1.5; /* Align the button vertically with the navbar */
 }
 
-/* Centering the navbar links and aligning the button to the right */
-/* .navbar-nav {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-}
-
-.collapse.navbar-collapse {
-  display: flex;
-  align-items: center;
-} */
-
 .custom-navbar .contact-btn {
   margin-left: auto; /* Push the button to the right */
 }
-
-/* .hero-header {
-  height: 200px;
-} */
 </style>

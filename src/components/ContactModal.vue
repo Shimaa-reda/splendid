@@ -171,6 +171,7 @@ h5 {
   margin-bottom: 5px; /* Reduce the space between paragraphs */
   padding: 0; /* Remove any default padding */
   line-height: 1.4; /* Adjust line height if necessary */
+  color: black;
 }
 
 /* Divider Line Style */
