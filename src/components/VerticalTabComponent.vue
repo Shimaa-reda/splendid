@@ -1,7 +1,7 @@
 <template>
-<div class="parent">
+<div class="parent ">
    <h3 class="pt-5">Innovative solutions tailored for you</h3>
- <div class="vertical-tabs" id="services">
+ <div class="vertical-tabs " id="services">
     
     <div class="tabs">
       <div
@@ -156,7 +156,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .vertical-tabs {
   display: flex;
   height: 100vh;  

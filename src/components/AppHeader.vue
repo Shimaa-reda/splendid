@@ -125,7 +125,9 @@ export default {
 .custom-navbar .nav-link.active {
   color: #002347;
 }
-
+.navbar-toggler-icon{
+  border: #F16A23;
+}
 .contact-btn {
   background: linear-gradient(to bottom, #FFC371, #F16A23);
   border: none;
@@ -143,4 +145,8 @@ export default {
 .custom-navbar .contact-btn {
   margin-left: auto; /* Push the button to the right */
 }
+/* .navbar-toggler.active
+{
+  border: 2px solid #F16A23 !important;
+} */
 </style>
