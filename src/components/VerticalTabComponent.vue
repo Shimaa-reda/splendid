@@ -12,11 +12,20 @@
       </div>
     </div>
     <div class="content-container">
-        
       <div v-for="(tab, index) in tabs" :key="index" v-show="activeTab === index" class="content">
-        <div class="col-lg-6 col-md-6 col-sm-12 content-text" v-html="tab.content"></div>
-        <div class="col-lg-6 col-md-6 col-sm-12 content-image">
-          <img :src="require('@/assets/' + tab.image)" alt="tab image" class="w-100" />
+        <div class="white-background">
+          <div class="content-row">
+            <div class="content-text col-lg-6 col-md-6 col-sm-12">
+              <div class="header">
+                <img :src="require('@/assets/' + tab.icon)" alt="Header Icon" class="header-icon" />
+                <h2>{{ tab.title }}</h2>
+              </div>
+              <div v-html="tab.content"></div>
+            </div>
+            <div class="content-image col-lg-6 col-md-6 col-sm-12">
+              <img :src="require('@/assets/' + tab.image)" alt="tab image" class="w-100" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -33,8 +42,7 @@ export default {
           icon: 'tap1.png',
           title: 'MARKETING',
           content: `
-            <div class="header"><h2>Marketing</h2></div>
-            <ul>
+            <ul class="text-start">
               <li>Market analysis and planning</li>
               <li>Strategic forecasting</li>
               <li>Benchmarking</li>
@@ -43,62 +51,97 @@ export default {
               <li>Telephone call center experiential communication</li>
             </ul>
           `,
-          image:'tap1-image.png'
+          image: 'tap1-image.png',
         },
         {
           icon: 'tap2.png',
           title: 'ADVERTISING',
-          content: `
-            <div class="header"><h2>Advertising</h2></div>
-            <p>Content for Advertising</p>
+           content: `
+            <ul class="text-start">
+              <li>Market analysis and planning</li>
+              <li>Strategic forecasting</li>
+              <li>Benchmarking</li>
+              <li>Market testing</li>
+              <li>Market research</li>
+              <li>Telephone call center experiential communication</li>
+            </ul>
           `,
-          image:'tap1-image.png'
+          image: 'tap1-image.png',
         },
         {
           icon: 'tap3.png',
           title: 'EVENT MANAGEMENT',
-          content: `
-            <div class="header"><h2>Event Management</h2></div>
-            <p>Content for Event Management</p>
+           content: `
+            <ul class="text-start">
+              <li>Market analysis and planning</li>
+              <li>Strategic forecasting</li>
+              <li>Benchmarking</li>
+              <li>Market testing</li>
+              <li>Market research</li>
+              <li>Telephone call center experiential communication</li>
+            </ul>
           `,
-          image:'tap1-image.png'
+          image: 'tap1-image.png',
         },
         {
           icon: 'tap4.png',
           title: 'DIGITAL MEDIA',
           content: `
-            <div class="header"><h2>Digital Media</h2></div>
-            <p>Content for Digital Media</p>
+            <ul class="text-start">
+              <li>Market analysis and planning</li>
+              <li>Strategic forecasting</li>
+              <li>Benchmarking</li>
+              <li>Market testing</li>
+              <li>Market research</li>
+              <li>Telephone call center experiential communication</li>
+            </ul>
           `,
-          image:'tap1-image.png'
-
+          image: 'tap1-image.png',
         },
         {
           icon: 'tap5.png',
           title: 'PUBLIC RELATIONS',
-          content: `
-            <div class="header"><h2>Public Relations</h2></div>
-            <p>Content for Public Relations</p>
+           content: `
+            <ul class="text-start">
+              <li>Market analysis and planning</li>
+              <li>Strategic forecasting</li>
+              <li>Benchmarking</li>
+              <li>Market testing</li>
+              <li>Market research</li>
+              <li>Telephone call center experiential communication</li>
+            </ul>
           `,
-          image:'tap1-image.png'
+          image: 'tap1-image.png',
         },
         {
           icon: 'tap6.png',
           title: 'TRAINING',
           content: `
-            <div class="header"><h2>Training</h2></div>
-            <p>Content for Training</p>
+            <ul class="text-start">
+              <li>Market analysis and planning</li>
+              <li>Strategic forecasting</li>
+              <li>Benchmarking</li>
+              <li>Market testing</li>
+              <li>Market research</li>
+              <li>Telephone call center experiential communication</li>
+            </ul>
           `,
-          image:'tap1-image.png'
+          image: 'tap1-image.png',
         },
         {
           icon: 'tap7.png',
           title: 'INTERNAL RELATIONS & TEAM BUILDING ACTIVITIES',
-          content: `
-            <div class="header"><h2>Internal Relations & Team Building Activities</h2></div>
-            <p>Content for Internal Relations & Team Building Activities</p>
+           content: `
+            <ul class="text-start">
+              <li>Market analysis and planning</li>
+              <li>Strategic forecasting</li>
+              <li>Benchmarking</li>
+              <li>Market testing</li>
+              <li>Market research</li>
+              <li>Telephone call center experiential communication</li>
+            </ul>
           `,
-          image:'tap1-image.png'
+          image: 'tap1-image.png',
         },
       ],
     };
@@ -138,26 +181,48 @@ export default {
   font-weight: bold;
 }
 
+
 .content-container {
   flex: 3;
   padding: 15px;
-  overflow-y: auto; 
-  /* background-color: white; */
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
-  
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
 }
 
 .content {
   display: flex;
+  align-items: center; /* Center content vertically */
+  height: 100%;
+}
+
+.white-background {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow:  30px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.content-row {
+  display: flex;
+  justify-content: space-between; 
 }
 
 .content-text {
-  flex: 2;
+  flex: 1;
   padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
 }
 
 .content-image {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-image img {
@@ -170,7 +235,22 @@ h2 {
 }
 
 ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none; 
+  padding-left: 0; 
+}
+
+ul li {
+  padding-left: 20px; /* Optional: Add some left padding to align with content */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  margin-right: 10px;
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
 }
 </style>
