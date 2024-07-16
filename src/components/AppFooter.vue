@@ -17,7 +17,7 @@
               <li>Join Us</li>
               <li>Contact Us</li> -->
                <li><a href="#" class="nav-link active" @click.prevent="scrollToSection('about')">About Us</a></li>
-              <li> <a href="#" class="nav-link active" @click.prevent="scrollToSection('service')">Service</a></li>
+              <li> <a href="#" class="nav-link active" @click.prevent="scrollToSection('services')">Service</a></li>
               <li><a href="#" class="nav-link active" @click.prevent="scrollToSection('clients')">Clients</a></li>
               <li><a href="#" class="nav-link active" @click.prevent="scrollToSection('joinUs')">Join Us</a></li>
               <li><a class="nav-link activ contact-btn" @click="showModal = true">Contact Us</a></li>

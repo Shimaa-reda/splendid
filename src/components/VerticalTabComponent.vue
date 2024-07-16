@@ -1,5 +1,5 @@
 <template>
-  <div class="vertical-tabs">
+  <div class="vertical-tabs" id="services">
     <div class="tabs">
       <div
         v-for="(tab, index) in tabs"
@@ -18,7 +18,7 @@
             <div class="content-text col-lg-6 col-md-6 col-sm-12">
               <div class="header">
                 <img :src="require('@/assets/' + tab.icon)" alt="Header Icon" class="header-icon" />
-                <h2>{{ tab.title }}</h2>
+                <h4 class="text-start">{{ tab.title }}</h4>
               </div>
               <div v-html="tab.content"></div>
             </div>
@@ -130,7 +130,7 @@ export default {
         },
         {
           icon: 'tap7.png',
-          title: 'INTERNAL RELATIONS & TEAM BUILDING ACTIVITIES',
+          title: 'Internal Team Building',
            content: `
             <ul class="text-start">
               <li>Market analysis and planning</li>
