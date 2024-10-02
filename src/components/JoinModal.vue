@@ -47,8 +47,7 @@ export default {
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  width: 500px; /* Adjust width as needed */
-}
+  width: 500px; }
 
 .close-btn {
   position: absolute;

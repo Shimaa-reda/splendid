@@ -126,7 +126,7 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow: auto; /* Allow the modal to be scrollable */
+  overflow: auto; 
 }
 
 .modal-content {
@@ -136,8 +136,8 @@ export default {
   position: relative;
   width: 90%;
   max-width: 800px;
-  max-height: 90vh; /* Limit height and allow scrolling within the modal */
-  overflow-y: auto; /* Scroll inside the modal if content overflows */
+  max-height: 90vh; 
+  overflow-y: auto; 
 }
 
 .close-btn {
@@ -157,20 +157,20 @@ h5 {
 
 .contact-form {
   width: 50%;
-  padding: 10px; /* Reduced padding */
+  padding: 10px; 
   border-radius: 8px;
 }
 
 .contact-info {
   width: 50%;
-  padding: 10px; /* Reduced padding */
+  padding: 10px; 
   border-radius: 8px;
 }
 
 .contact-info p {
-  margin-bottom: 5px; /* Reduce the space between paragraphs */
-  padding: 0; /* Remove any default padding */
-  line-height: 1.4; /* Adjust line height if necessary */
+  margin-bottom: 5px; 
+  padding: 0;
+  line-height: 1.4; 
   color: black;
 }
 
@@ -178,7 +178,7 @@ h5 {
 .divider {
   width: 1px;
   background-color: #ccc;
-  margin: 0 10px; /* Adjusted margin */
+  margin: 0 10px; 
 }
 
 
@@ -187,7 +187,7 @@ h5 {
 }
 
 .form-group {
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 10px; 
 }
 
 input[type="text"],
@@ -195,13 +195,13 @@ input[type="email"],
 input[type="number"],
 textarea {
   width: 100%;
-  padding: 8px; /* Reduced padding */
+  padding: 8px; 
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 textarea.form-control {
-  height: auto; /* Ensure height adjusts with rows attribute */
+  height: auto; 
 }
 
 button.contact-button {

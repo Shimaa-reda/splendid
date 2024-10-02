@@ -95,15 +95,14 @@ export default {
 }
 
 .navbar-nav .nav-item {
-  margin: 0 10px; /* Add space between each navigation item */
+  margin: 0 10px; 
 }
 
 .custom-navbar {
-  min-height: 40px; /* Adjust this value to increase height */
-  padding: 1rem 1rem; /* Adjust padding for more spacing inside the navbar */
+  min-height: 40px; 
+  padding: 1rem 1rem; 
   transition: background-color 0.3s ease;
-  background-color: white; /* Initial background color */
-}
+  background-color: white; }
 
 .fixed-navbar {
   position: fixed;
@@ -114,12 +113,12 @@ export default {
 }
 
 .custom-navbar .navbar-brand {
-  line-height: 40px; /* Center align the brand vertically */
+  line-height: 40px; 
 }
 
 .custom-navbar .nav-link {
-  line-height: 40px; /* Center align the nav links vertically */
-  color: #002347; /* Set the color of the nav links */
+  line-height: 40px;
+  color: #002347; 
 }
 
 .custom-navbar .nav-link.active {
@@ -132,18 +131,18 @@ export default {
   background: linear-gradient(to bottom, #FFC371, #F16A23);
   border: none;
   color: white;
-  padding: 0.375rem 0.75rem; /* Adjust padding to match the navbar */
+  padding: 0.375rem 0.75rem; 
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1rem; /* Ensure font size matches navbar links */
+  font-size: 1rem; 
   cursor: pointer;
   border-radius: 5px;
-  line-height: 1.5; /* Align the button vertically with the navbar */
+  line-height: 1.5; 
 }
 
 .custom-navbar .contact-btn {
-  margin-left: auto; /* Push the button to the right */
+  margin-left: auto;
 }
 /* .navbar-toggler.active
 {

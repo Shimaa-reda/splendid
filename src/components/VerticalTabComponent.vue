@@ -66,12 +66,12 @@ export default {
           title: 'ADVERTISING',
           content: `
             <ul class="text-start">
-              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
-              <li><i class="bi bi-check2"></i> Strategic forecasting</li>
-              <li><i class="bi bi-check2"></i> Benchmarking</li>
-              <li><i class="bi bi-check2"></i> Market testing</li>
-              <li><i class="bi bi-check2"></i> Market research</li>
-              <li><i class="bi bi-check2"></i> Telephone call center experiential communication</li>
+              <li><i class="bi bi-check2"></i> Advertising strategy</li>
+              <li><i class="bi bi-check2"></i> Creative platform origination</li>
+              <li><i class="bi bi-check2"></i> Concept testing</li>
+              <li><i class="bi bi-check2"></i> Copywriting</li>
+              <li><i class="bi bi-check2"></i> Broadcast media production</li>
+              <li><i class="bi bi-check2"></i> Production</li>
             </ul>
           `,
           image: 'tap1-image.png',
@@ -81,12 +81,18 @@ export default {
           title: 'EVENT MANAGEMENT',
           content: `
             <ul class="text-start">
-              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
-              <li><i class="bi bi-check2"></i> Strategic forecasting</li>
-              <li><i class="bi bi-check2"></i> Benchmarking</li>
-              <li><i class="bi bi-check2"></i> Market testing</li>
-              <li><i class="bi bi-check2"></i> Market research</li>
-              <li><i class="bi bi-check2"></i> Telephone call center experiential communication</li>
+             
+              <li><i class="bi bi-check2"></i>Web Development</li>
+              <li><i class="bi bi-check2"></i>Mobile and Slate</li>
+              <li><i class="bi bi-check2"></i>Application Development</li>
+              <li><i class="bi bi-check2"></i>Digital Brand Analytics</li>
+               <li><i class="bi bi-check2"></i>Social Media</li>
+              <li><i class="bi bi-check2"></i>Trade Show</li>
+              <li><i class="bi bi-check2"></i>Health Gaming</li>
+              <li><i class="bi bi-check2"></i>E-Detailing and CLM Platform production</li>
+              <li><i class="bi bi-check2"></i>Video Production</li>
+              <li><i class="bi bi-check2"></i>Interactive Platform</li>
+
             </ul>
           `,
           image: 'tap1-image.png',
@@ -96,12 +102,14 @@ export default {
           title: 'DIGITAL MEDIA',
           content: `
             <ul class="text-start">
-              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
-              <li><i class="bi bi-check2"></i> Strategic forecasting</li>
-              <li><i class="bi bi-check2"></i> Benchmarking</li>
-              <li><i class="bi bi-check2"></i> Market testing</li>
-              <li><i class="bi bi-check2"></i> Market research</li>
-              <li><i class="bi bi-check2"></i> Telephone call center experiential communication</li>
+              <li><i class="bi bi-check2"></i>Corporate PR strategy and planning</li>
+              <li><i class="bi bi-check2"></i>Media relations</li>
+              <li><i class="bi bi-check2"></i>Public affairs & governmental relations</li>
+              <li><i class="bi bi-check2"></i>Interpersonal communications</li>
+              <li><i class="bi bi-check2"></i>CSR management</li>
+              <li><i class="bi bi-check2"></i>CRM and loyalty marketing</li>
+              <li><i class="bi bi-check2"></i>Crisis management</li>
+
             </ul>
           `,
           image: 'tap1-image.png',
@@ -111,12 +119,11 @@ export default {
           title: 'PUBLIC RELATIONS',
           content: `
             <ul class="text-start">
-              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
-              <li><i class="bi bi-check2"></i> Strategic forecasting</li>
-              <li><i class="bi bi-check2"></i> Benchmarking</li>
-              <li><i class="bi bi-check2"></i> Market testing</li>
-              <li><i class="bi bi-check2"></i> Market research</li>
-              <li><i class="bi bi-check2"></i> Telephone call center experiential communication</li>
+              <li><i class="bi bi-check2"></i>Marketing Training</li>
+              <li><i class="bi bi-check2"></i>Business Training</li>
+              <li><i class="bi bi-check2"></i>Strategic Planning for mangers</li>
+              <li><i class="bi bi-check2"></i>Measuring ROI of Training</li>
+             
             </ul>
           `,
           image: 'tap1-image.png',
@@ -126,19 +133,17 @@ export default {
           title: 'TRAINING',
           content: `
             <ul class="text-start">
-              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
-              <li><i class="bi bi-check2"></i> Strategic forecasting</li>
-              <li><i class="bi bi-check2"></i> Benchmarking</li>
-              <li><i class="bi bi-check2"></i> Market testing</li>
-              <li><i class="bi bi-check2"></i> Market research</li>
-              <li><i class="bi bi-check2"></i> Telephone call center experiential communication</li>
+              <li><i class="bi bi-check2"></i>Internal newsletters</li>
+              <li><i class="bi bi-check2"></i>Internal meetings, cycle meetings and sales conferences</li>
+              <li><i class="bi bi-check2"></i>Employees workshops and training program</li>
+              
             </ul>
           `,
           image: 'tap1-image.png',
         },
         {
           icon: 'tap7.png',
-          title: 'INTERNAL TEAM BUILDING INTERNAL',
+          title: 'INTERNAL RELATIONS & TEAM BUILDING ACTIVITIES',
           content: `
             <ul class="text-start">
               <li><i class="bi bi-check2"></i> Market analysis and planning</li>
@@ -340,7 +345,7 @@ h4.text-start {
 }
 
 ul {
-  list-style-type: none; /* Remove bullets */
+  list-style-type: none; 
   padding-left: 0;
 }
 

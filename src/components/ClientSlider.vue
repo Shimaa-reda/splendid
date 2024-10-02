@@ -100,15 +100,15 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 17)); /* Adjusted to match the number of slides */
+    transform: translateX(calc(-250px * 17)); 
   }
 }
 
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  height: 150px; /* Adjust height as needed */
-  margin: 20px auto; /* Added margin for spacing between sliders */
+  height: 150px; 
+  margin: 20px auto;
   overflow: hidden;
   position: relative;
   width: 960px;
@@ -118,7 +118,7 @@ body {
 .slider::after {
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
-  height: 150px; /* Adjust height to match slider */
+  height: 150px; 
   position: absolute;
   width: 200px;
   z-index: 2;
@@ -138,11 +138,10 @@ body {
 .slide-track {
   animation: scroll 40s linear infinite;
   display: flex;
-  width: calc(250px * 34); /* Adjust width to account for repeated images */
+  width: calc(250px * 34); 
 }
 
 .slide {
-  height: 150px; /* Adjust height to match slider */
-  width: 200px; /* Adjust width to match images */
-}
+  height: 150px; 
+  width: 200px;}
 </style>
