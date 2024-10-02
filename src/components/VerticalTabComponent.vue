@@ -175,6 +175,26 @@ ul li {
 </style>
 
 <style scoped>
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-left: 28px; 
+}
+
+.header-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+h4.text-start {
+  margin: 0; 
+  font-size: 1.25rem; 
+  color: #F16A23;
+  font-weight: bold;
+}
+
 /* Styles for larger screens (default) */
 .vertical-tabs {
   display: flex;
@@ -205,7 +225,7 @@ ul li {
   cursor: pointer;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ccc; /* Separate each tab */
+  border-bottom: 1px solid #ccc; 
 }
 
 .tab img {
@@ -224,7 +244,7 @@ ul li {
   flex-wrap: wrap;
  }
 .tab-title {
-  display: inline; /* Show tab titles on larger screens */
+  display: inline; 
 }
 
 .content-container {
@@ -242,7 +262,7 @@ ul li {
   height: 100%;
 }
 .content-container {
-  flex: 3;
+  /* flex: 3; */
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -252,14 +272,14 @@ ul li {
   background: linear-gradient(to bottom, #FFC371, #F16A23);
   border: none;
   color: white;
-  padding: 0.375rem 0.75rem; /* Adjust padding to match the navbar */
+  padding: 0.375rem 0.75rem; 
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1rem; /* Ensure font size matches navbar links */
+  font-size: 1rem; 
   cursor: pointer;
   border-radius: 5px;
-  line-height: 1.5; /* Align the button vertically with the navbar */
+  line-height: 1.5; 
 }
 
 /* Responsive styles for smaller screens (below 768px) */
@@ -275,7 +295,7 @@ ul li {
   }
 
   .tabs {
-    flex-direction: row; /* Horizontal tabs on small screens */
+    flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 10px;
@@ -284,19 +304,21 @@ ul li {
 
   .tab {
     padding: 10px;
-    margin-right: 10px; /* Space between tabs */
-    border-bottom: none; /* Remove border for horizontal tabs */
-    border-right: 1px solid #ccc; 
+    margin-right: 10px; 
+    /* border-bottom: 1px solid #F16A23;; */
+    /* border-right: 1px solid #ccc;  */
+    
     
   }
 
   .tab img {
-    margin-right: 0; /* Remove margin for horizontal layout */
-    margin-bottom: 5px; /* Add bottom margin for icon spacing */
+    margin-right: 0; 
+    margin-bottom: 5px; 
+
   }
 
   .tab-title {
-    display: none; /* Hide tab titles on smaller screens */
+    display: none; 
   }
 
   .content-container {
