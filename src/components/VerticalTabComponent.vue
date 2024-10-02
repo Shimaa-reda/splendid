@@ -1,8 +1,7 @@
 <template>
-<div class="parent ">
-   <h3 class="pt-5">Innovative solutions tailored for you</h3>
- <div class="vertical-tabs " id="services">
-    
+<div class="parent">
+  <h3 class="pt-5">Innovative solutions tailored for you</h3>
+  <div class="vertical-tabs container" id="services">
     <div class="tabs">
       <div
         v-for="(tab, index) in tabs"
@@ -11,7 +10,7 @@
         @click="activeTab = index"
       >
         <img :src="require('@/assets/' + tab.icon)" class="tab-icon" alt="icon" />
-        {{ tab.title }}
+        <span class="tab-title">{{ tab.title }}</span>
       </div>
     </div>
     <div class="content-container">
@@ -34,9 +33,11 @@
     </div>
   </div>
 
-   <h3 class="pb-5">Ready to take your brand to the next level? <button class="contact-btn" @click="showModal = true">Contact Us</button></h3>
+  <h3 class="pb-5 mt-5">Ready to take your brand to the next level? 
+    <button class="contact-btn" @click="showModal = true">Contact Us</button></h3>
+
+    
 </div>
- 
 </template>
 
 <script>
@@ -80,7 +81,7 @@ export default {
           title: 'EVENT MANAGEMENT',
           content: `
             <ul class="text-start">
-             <li><i class="bi bi-check2"></i> Market analysis and planning</li>
+              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
               <li><i class="bi bi-check2"></i> Strategic forecasting</li>
               <li><i class="bi bi-check2"></i> Benchmarking</li>
               <li><i class="bi bi-check2"></i> Market testing</li>
@@ -95,7 +96,7 @@ export default {
           title: 'DIGITAL MEDIA',
           content: `
             <ul class="text-start">
-             <li><i class="bi bi-check2"></i> Market analysis and planning</li>
+              <li><i class="bi bi-check2"></i> Market analysis and planning</li>
               <li><i class="bi bi-check2"></i> Strategic forecasting</li>
               <li><i class="bi bi-check2"></i> Benchmarking</li>
               <li><i class="bi bi-check2"></i> Market testing</li>
@@ -156,121 +157,97 @@ export default {
 };
 </script>
 
+<style>
+/* Global styles */
+.bi {
+  color: green;
+  font-size: 24px; 
+}
+
+ul {
+  list-style-type: none; 
+  padding-left: 0;
+}
+
+ul li {
+  line-height: 2;
+}
+</style>
+
 <style scoped>
+/* Styles for larger screens (default) */
 .vertical-tabs {
   display: flex;
-  height: 100vh;  
-  /* background-color: #D9E4EF57; */
+  height: 100vh;
+  
 }
-.parent{
-   /* height: 100vh;  */
-  background-color: #D9E4EF57;
-}
+
 .tabs {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center tabs vertically */
-  /* border-right: 1px solid #ccc;
-  background-color: #f9f9f9;  */
+  flex-direction: column; 
+  justify-content: flex-start;
+  padding-right: 10px;
+  margin-top: 130px;
 }
 
+.parent{
+  background-color: #F1F5F9;
+}
+.white-background {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 20px 20px rgba(0, 0, 0, 0.1);
+}
 .tab {
   padding: 15px;
   cursor: pointer;
-  /* border-bottom: 1px solid #ccc;  */
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #ccc; /* Separate each tab */
 }
 
 .tab img {
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 
 .tab.active {
-  border-bottom: 2px solid #F16A23;
- 
   font-weight: bold;
+  color: #f16a23;
+
+}
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+ }
+.tab-title {
+  display: inline; /* Show tab titles on larger screens */
 }
 
 .content-container {
   flex: 3;
   padding: 15px;
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .content {
   display: flex;
-  align-items: center; /* Center content vertically */
+  align-items: center;
   height: 100%;
 }
-.parent h3{
-  color: #002347;
-  font-weight: bold;
-  /* margin-top: 10px; */
-}
-
-
-.white-background {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow:  20px 20px rgba(0, 0, 0, 0.1);
-}
-
-.content-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.content-text {
-  flex: 1;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-}
-
-.content-image {
-  flex: 1;
+.content-container {
+  flex: 3;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.content-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-h2 {
-  margin-top: 0;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  /* padding-left: 20px;  */
-  line-height: 2;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  color: #F16A23;
-}
-
-.header-icon {
-  margin-right: 10px;
-  width: 30px; /* Adjust size as needed */
-  height: 30px; /* Adjust size as needed */
-}
-
 .contact-btn {
   background: linear-gradient(to bottom, #FFC371, #F16A23);
   border: none;
@@ -284,9 +261,69 @@ ul li {
   border-radius: 5px;
   line-height: 1.5; /* Align the button vertically with the navbar */
 }
-.bi {
-  color: green; 
-   font-size: 24px;
+
+/* Responsive styles for smaller screens (below 768px) */
+@media (max-width: 768px) {
+  .tab.active {
+ 
+  color: #f16a23;
+  border-bottom: 2px solid #f16a23;
+  
+}
+  .vertical-tabs {
+    flex-direction: column;
+  }
+
+  .tabs {
+    flex-direction: row; /* Horizontal tabs on small screens */
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  .tab {
+    padding: 10px;
+    margin-right: 10px; /* Space between tabs */
+    border-bottom: none; /* Remove border for horizontal tabs */
+    border-right: 1px solid #ccc; 
+    
+  }
+
+  .tab img {
+    margin-right: 0; /* Remove margin for horizontal layout */
+    margin-bottom: 5px; /* Add bottom margin for icon spacing */
+  }
+
+  .tab-title {
+    display: none; /* Hide tab titles on smaller screens */
+  }
+
+  .content-container {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 }
+
 </style>
+
+<style>
+/* Global styles */
+.bi {
+  color: green;
+  font-size: 24px; 
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0;
+}
+
+ul li {
+  line-height: 2;
+}
+</style>
+
